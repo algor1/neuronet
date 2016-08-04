@@ -4,7 +4,8 @@ mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 import tensorflow as tf
 sess = tf.InteractiveSession()
 
-
+x = tf.placeholder(tf.float32, shape=[None, 784])
+y_ = tf.placeholder(tf.float32, shape=[None, 10])
 
 def weight_variable(shape):
   initial = tf.truncated_normal(shape, stddev=0.1)
@@ -52,6 +53,11 @@ cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y_conv), reduction_ind
 train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
 correct_prediction = tf.equal(tf.argmax(y_conv,1), tf.argmax(y_,1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+
+saver = tf.train.Saver()
+#saver.restore(sess, "model_CNN.ckpt")
+#print("Model restored.")
+
 sess.run(tf.initialize_all_variables())
 for i in range(20000):
   batch = mnist.train.next_batch(50)
@@ -64,4 +70,7 @@ for i in range(20000):
 print("test accuracy %g"%accuracy.eval(feed_dict={
     x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0}))
 
+# Save the variables to disk.
+save_path = saver.save(sess, "model_CNN.ckpt")
+print("Model saved in file: %s" % save_path)
 
