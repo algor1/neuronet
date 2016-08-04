@@ -57,7 +57,7 @@ accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 saver = tf.train.Saver()
 saver.restore(sess, "model_CNN.ckpt")
-Print("Model restored.")
+print("Model restored.")
 
 sess.run(tf.initialize_all_variables())
 for i in range(20000):
