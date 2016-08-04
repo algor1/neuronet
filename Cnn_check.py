@@ -97,7 +97,7 @@ for i in range(0,28):
 
 piix1=[piix]
 image1.show()
-ans=sess.run(y,feed_dict={x: piix1})
+ans=sess.run(y_conv,feed_dict={x: piix1})
 print (ans)
 for i in range(len(ans[0])):
   print (i," - вероятность ", round(ans[0][i]*100,2), "%")
