@@ -74,3 +74,30 @@ print("test accuracy %g"%accuracy.eval(feed_dict={
 # Save the variables to disk.
 #save_path = saver.save(sess, "model_CNN.ckpt")
 #print("Model saved in file: %s" % save_path)
+from PIL import Image
+image = Image.open("4.jpg")  
+image2=image.resize((28,28))
+image2.show()
+image1 = Image.new("L",(28,28),color=255)  
+draw = ImageDraw.Draw(image1) 
+pix= image2.load()
+piix=(list())
+k=1
+
+for i in range(0,28):
+  for j in range(0,28):
+    a = pix[i, j][0]
+    b = pix[i, j][1]
+    c = pix[i, j][2]
+    col = (a + b + c)//3
+    piix.append(col/255)
+    draw.point((i, j),fill=col)
+
+piix1=[piix]
+image1.show()
+ans=sess.run(y,feed_dict={x: piix1})
+print (ans)
+for i in range(len(ans[0])):
+  print (i," - вероятность ", round(ans[0][i]*100,2), "%")
+
+
