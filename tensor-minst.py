@@ -53,7 +53,7 @@ image1.show()
 
 
 #print(sess.run(y,feed_dict={x:    mnist.test.images}))
-ans=sess.run(y,feed_dict={x: piix1})
+ans=y.run(feed_dict={x: piix1})
 
 for i in range(len(ans[0])):
   print (i," - вероятность ", round(ans[0,i]*100,2), "%")
