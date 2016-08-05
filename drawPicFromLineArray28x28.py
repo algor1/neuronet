@@ -1,6 +1,6 @@
 from PIL import Image, ImageDraw
 
-def drawPicture(pix3):
+def drawPicture28x28(pix3):
   image3 = Image.new("RGB",(28,28),color=(255,255,255))  
   draw3 = ImageDraw.Draw(image3)  
   if min(pix3)>=0:
@@ -33,7 +33,7 @@ def drawPicture(pix3):
 inputSubArray=[]
 pix33=[]
 nnn=0
-outputPixArray=[]
+
 for i in range (784):
   if i == nnn:
     nnn+=29
@@ -43,7 +43,9 @@ for i in range (784):
 pix33=inputSubArray
 print(len(pix33[2]))
 
+def drawWeights(W)
+outputPixArray=[]
 for k in range(10):
   for i in range (784):
-    outputPixArray.append(pix33[i][k])
-  drawPicture(outputPixArray)
+    outputPixArray.append(W[i][k])
+  drawPicture28x28(outputPixArray)
