@@ -24,7 +24,18 @@ def drawPicture28x28(pix3):
         colB=int((pix3[x])*kBlue)
         colR=0
       draw3.point((i, j),fill=(colR,0,colB))
-  image3.show()
+  return image3
+  #image3.show()
+
+#массив из n линейниых массивов784
+def drawBunchOfPicture28x28(doubleArray784):
+  imageout = Image.new("RGB",(len(doubleArray784)*28,28),color=(255,255,255))  
+  for i in len(doubleArray784):
+    imageout.paste(drawPicture28x28(pix),box=(i*28,0))
+  return imageout
+
+
+  
 
 
 #добываем картинку
@@ -43,9 +54,9 @@ for i in range (784):
 pix33=inputSubArray
 print(len(pix33[2]))
 
-def drawWeights(W)
-outputPixArray=[]
-for k in range(10):
-  for i in range (784):
-    outputPixArray.append(W[i][k])
-  drawPicture28x28(outputPixArray)
+def drawWeights(W):
+  outputPixArray=[]
+  for k in range(10):
+    for i in range (784):
+      outputPixArray.append(W[i][k])
+    drawPicture28x28(outputPixArray)
