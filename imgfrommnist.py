@@ -1,5 +1,5 @@
-#from tensorflow.examples.tutorials.mnist import input_data
-#mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
+from tensorflow.examples.tutorials.mnist import input_data
+mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 
 from drawPicFromLineArray28x28 import drawPicture28x28 as drpic
 from drawPicFromLineArray28x28 import drawBunchOfPicture28x28 as drbanch
