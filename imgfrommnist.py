@@ -3,6 +3,7 @@ mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 
 from drawPicFromLineArray28x28 import drawPicture28x28 as drpic
 from drawPicFromLineArray28x28 import drawBunchOfPicture28x28 as drbanch
+import numpy as np
 
 from PIL import Image, ImageDraw
 
@@ -20,7 +21,8 @@ m8=[]
 m9=[]
 for i in range(100):
     if l[i][0]==1:
-        m0.append(p[i])
+       # print(p[i])
+        m0.append(p[i].tolist())
     elif l[i][1]==1:
         m1.append(p[i])
     elif l[i][2]==1:
@@ -39,5 +41,5 @@ for i in range(100):
         m8.append(p[i])
     elif l[i][9]==1:
         m9.append(p[i])
-
+#print (m0)
 drbanch(m0).show

@@ -1,4 +1,5 @@
 from PIL import Image, ImageDraw
+import numpy as np
 
 def drawPicture28x28(pix3):
   image3 = Image.new("RGB",(28,28),color=(255,255,255))  
@@ -29,6 +30,7 @@ def drawPicture28x28(pix3):
 
 #массив из n линейниых массивов784
 def drawBunchOfPicture28x28(doubleArray784):
+  print(doubleArray784)
   imageout = Image.new("RGB",(len(doubleArray784)*28,28),color=(255,255,255))  
   for i in len(doubleArray784):
     imageout.paste(drawPicture28x28(pix),box=(i*28,0))
