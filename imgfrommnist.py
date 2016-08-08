@@ -8,6 +8,16 @@ from PIL import Image, ImageDraw
 
 p=mnist.test.images
 l=mnist.test.labels
+m0=[]
+m1=[]
+m2=[]
+m3=[]
+m4=[]
+m5=[]
+m6=[]
+m7=[]
+m8=[]
+m9=[]
 for i in range(100):
     if l[i][0]==1:
         m0.append(p[i])
