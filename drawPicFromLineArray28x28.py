@@ -30,10 +30,10 @@ def drawPicture28x28(pix3):
 
 #массив из n линейниых массивов784
 def drawBunchOfPicture28x28(doubleArray784):
-  print(doubleArray784)
+  #print(doubleArray784)
   imageout = Image.new("RGB",(len(doubleArray784)*28,28),color=(255,255,255))  
   for i in range(len(doubleArray784)):
-    imageout.paste(drawPicture28x28(pix),box=(i*28,0))
+    imageout.paste(drawPicture28x28(doubleArray784[i]),box=(i*28,0))
   return imageout
 
 
