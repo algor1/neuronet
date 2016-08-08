@@ -32,7 +32,7 @@ def drawPicture28x28(pix3):
 def drawBunchOfPicture28x28(doubleArray784):
   print(doubleArray784)
   imageout = Image.new("RGB",(len(doubleArray784)*28,28),color=(255,255,255))  
-  for i in len(doubleArray784):
+  for i in range(len(doubleArray784)):
     imageout.paste(drawPicture28x28(pix),box=(i*28,0))
   return imageout
 
