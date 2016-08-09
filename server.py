@@ -31,7 +31,7 @@ while True:
     
     #recv - получает сообщение TCP
    
-    While True:
+    while True:
      data = sock.read(4096)
       if not data: break
         fp.write(data)
