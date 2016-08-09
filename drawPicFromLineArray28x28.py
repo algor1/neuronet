@@ -28,6 +28,27 @@ def drawPicture28x28(pix3):
   return image3
   #image3.show()
 
+
+
+
+Def printImgInText(arr)
+
+  width =28
+  height =28
+
+  for i in range(0,width):
+    fff=""
+    for j in range(0,height):
+      col= int(255*(1-arr[i*28+j]))
+      if col>128:
+        fff=fff+"88"
+      else:
+        fff=fff+"  "
+    fff+=str(i)
+    print (fff)
+
+
+
 #массив из n линейниых массивов784
 def drawBunchOfPicture28x28(doubleArray784):
   #print(doubleArray784)
