@@ -34,7 +34,7 @@ while True:
     while True:
      data = sock.read(4096)
      if not data: break
-        fp.write(data)
+     fp.write(data)
     fp.close()
 
     #если ничего не прислали, завершим программу
