@@ -33,7 +33,7 @@ while True:
    
     while True:
      data = sock.read(4096)
-      if not data: break
+     if not data: break
         fp.write(data)
     fp.close()
 
