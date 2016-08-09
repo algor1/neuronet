@@ -86,8 +86,8 @@ pix= image2.load()
 piix=(list())
 k=1
 
-for i in range(0,28):
-  for j in range(0,28):
+for j in range(0,28):
+  for i in range(0,28):
     a = pix[i, j][0]
     b = pix[i, j][1]
     c = pix[i, j][2]
