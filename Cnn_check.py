@@ -77,7 +77,7 @@ print("test accuracy %g"%accuracy.eval(feed_dict={
 #save_path = saver.save(sess, "model_CNN.ckpt")
 #print("Model saved in file: %s" % save_path)
 from PIL import Image, ImageDraw
-image = Image.open("4.jpg")  
+image = Image.open("2.jpg")  
 image2=image.resize((28,28))
 image2.show()
 image1 = Image.new("L",(28,28),color=255)  
