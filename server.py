@@ -14,7 +14,7 @@ tcp_socket = socket(AF_INET, SOCK_STREAM)
 tcp_socket.bind(addr)
 #listen - запускает прием TCP
 tcp_socket.listen(1)
-
+fp = open("file.jpg", "wb")
 #Бесконечный цикл работы программы
 while True:
     
@@ -30,13 +30,19 @@ while True:
     print('client addr: ', addr)
     
     #recv - получает сообщение TCP
-    data = conn.recv(1024)
+   
+    While True:
+     data = sock.read(4096)
+      if not data: break
+        fp.write(data)
+    fp.close()
+
     #если ничего не прислали, завершим программу
     if not data:
         conn.close()
         break
     else:
-        print(data)
+        # print(data)
         #send - передает сообщение TCP
         conn.send(b'Hello from server!')
         #close - закрывает сокет
