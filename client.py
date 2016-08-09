@@ -13,7 +13,7 @@ filename = input('имя файла: ')
 if not filename: 
     tcp_socket.close() 
     sys.exit(1)
-sock.send( open(filename, "rb").read() )
+tcp_socket.send( open(filename, "rb").read() )
 
 data = tcp_socket.recv(1024)
 print(data)
