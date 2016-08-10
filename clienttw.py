@@ -8,7 +8,7 @@ class Twist_client(protocol.Protocol):
     def sendData(self):
         data = input('write message: ')
         if data:
-            self.transport.write(data)
+            self.transport.write(data.encode("utf-8"))
         else:
             #transport.loseConnection() - разрыв соединения
             self.transport.loseConnection()
