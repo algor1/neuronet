@@ -19,9 +19,9 @@ class Twist(protocol.Protocol):
     
     #Событие dataReceived - получение и отправление данных
     def dataReceived(self, data):
-        print (data)
+        print (data.decode("utf-8"))
         #transport.write - отправка сообщения
-        self.transport.write('Hello from server!')
+        self.transport.write(b'Hello from server!')
     
     #Событие connectionLost срабатывает при разрыве соединения с клиентом
     def connectionLost(self, reason):
