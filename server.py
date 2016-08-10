@@ -32,7 +32,7 @@ while True:
     #recv - получает сообщение TCP
    
     while True:
-     data = tcp_socket.resv(4096)
+     data = tcp_socket.recv(4096)
      if not data: break
      fp.write(data)
     fp.close()
