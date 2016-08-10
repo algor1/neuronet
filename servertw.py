@@ -19,7 +19,7 @@ class Twist(protocol.Protocol):
     
     #Событие dataReceived - получение и отправление данных
     def dataReceived(self, data):
-        print data
+        print (data)
         #transport.write - отправка сообщения
         self.transport.write('Hello from server!')
     
