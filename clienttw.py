@@ -6,7 +6,7 @@ port = 777
 class Twist_client(protocol.Protocol):
     #Отправка сообщения с проверкой
     def sendData(self):
-        data = raw_input('write message: ')
+        data = input('write message: ')
         if data:
             self.transport.write(data)
         else:
